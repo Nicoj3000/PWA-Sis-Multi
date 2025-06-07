@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7f5af0">
+    <title>MiAgenda PRO</title>
+    <link rel="stylesheet" href="/src/master.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/1.png">
+    <link rel="icon" href="images/1.png">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <img src="images/1.png" alt="Logo de la PWA" class="logo" id="logo-img">
+        <div class="logo-container">
+            
+            <span class="brand-title">Mi Agenda</span>
+        </div>
+        <nav class="calendar-controls">
+            <button id="prev-month" title="Mes anterior">&lt;</button>
+            <span id="calendar-month-label"></span>
+            <button id="next-month" title="Mes siguiente">&gt;</button>
+            <button id="today-btn" title="Hoy">Hoy</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="calendar"></div>
+    </main>
+
+    <!-- Modal para agregar/editar evento -->
+    <div id="event-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2 id="modal-title">Agregar evento</h2>
+            <form id="modal-form">
+                <input type="text" id="modal-event-title" placeholder="Título del evento" required>
+                <input type="time" id="modal-event-time" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="src/index.js"></script>
+    <script>
+        // Logo animación
+        const logo = document.getElementById('logo-img');
+        logo.addEventListener('mouseenter', () => {
+            logo.classList.add('spin');
+            logo.src = 'images/2.png';
+        });
+        logo.addEventListener('mouseleave', () => {
+            logo.classList.remove('spin');
+            logo.src = 'images/1.png';
+        });
+    </script>
+
+    <div id="toast" class="toast"></div>
+</body>
+</html>
