@@ -236,7 +236,27 @@ body {
     color: var(--white);
 }
 
-
+.view-switch {
+    display: inline-flex;
+    gap: 0.3rem;
+    margin-left: 1rem;
+    vertical-align: middle;
+}
+.view-btn {
+    background: var(--surface);
+    color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 0.8rem;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.view-btn.active,
+.view-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
 
 /* Modal */
 .modal {
